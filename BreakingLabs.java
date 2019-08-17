@@ -1,5 +1,7 @@
 
+import java.util.Collection;
 import java.util.Collections;
+import java.util.Enumeration;
 import java.util.Vector;
 
 
@@ -15,30 +17,36 @@ public class BreakingLabs {
     static void reaction()
     {
         Collections.sort(v);
-        int n = v.size();
-        int a = v.get(n-1);
-        int b = v.get(n-2);
-        if(a == b)
-        {
-            v.remove(n-1);
-            v.remove(n-2);
-        }
-        else if(a <= b)
-        {
-            v.add(b-a);
-            v.remove(n-1);
-            v.remove(n);
-        }
+            int n = v.size();
+            int b = v.get(n - 1);
+            int a = v.get(n - 2);
+            if (a == b)
+            {
+                v.remove(n - 1);
+                v.remove(n - 2);
+            } else if (a <= b)
+            {
+                v.add(Math.abs(b-a));
+                v.remove(v.size()-2);
+                v.remove(v.size()-2);
+
+            }
     }
     static int solution(String s)
     {
         String[] string = s.split(" ");
-        int[] input = new int[string.length];
         for(int i = 0 ; i<string.length ; i++)
             v.add(Integer.parseInt(string[i]));
-        while (v.size() != 1 || v.size() != 0)
+
+        /*Enumeration enu = v.elements();
+        System.out.println("The enumeration of values are:");
+        while (enu.hasMoreElements())
+            System.out.println(enu.nextElement());*/
+
+        while (v.size() > 1)
             reaction();
-        if(v.size() == 1) {
+        if(v.size() == 1)
+        {
             int x = v.get(0);
             v.clear();
             return x;
