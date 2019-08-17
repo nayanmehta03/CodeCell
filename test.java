@@ -1,6 +1,7 @@
 
 
-public class test {
+
+  public class WC_3_2_WirePieces {
     public static void main(String args[]) {
         System.out.println(maxPieces(10,5,2,3)+maxPieces(16,7,5,3)+maxPieces(10000,19,35,37)+maxPieces(2501,8,4,6)+maxPieces(10520,217,88,129)+maxPieces(300001,263,311,179));
     }
@@ -23,9 +24,10 @@ public class test {
                         store[i]=Math.max(store[i-values[j]]+1,store[i]);
                 }
                 else
-                    store[i] = i;
+                    store[i] = -1;
             }
         }
         return store[n];
     }
 }
+
