@@ -24,7 +24,10 @@
                         store[i]=Math.max(store[i-values[j]]+1,store[i]);
                 }
                 else
-                    store[i] = -1;
+                {
+                  if(store[i] == 0)
+                    store[i]=-1;
+                }
             }
         }
         return store[n];
