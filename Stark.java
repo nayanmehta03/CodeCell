@@ -17,7 +17,7 @@ public class Stark {
     }
     public static void main(String[] args)
     {
-        System.out.print((int)sol(500,1000,100)+(int)sol(200,100,125)+(int)sol(3000,1000,1000)+(int)sol(25000,10000,12000)+(int)sol(12345,2120,1111));
+        System.out.print((int)sol(3000,1000,1000) + sol(200,100,125) + sol(500,1000,100)+ sol(25000,10000,12000));
     }
 
 }
